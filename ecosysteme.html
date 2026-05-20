@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'écosystème — MOUV-MENT</title>
+<meta name="description" content="MOUV-MENT chapeaute des marques spécialisées dans la transformation professionnelle : Startly, Optelys, AQN. Une maison, plusieurs territoires d'expertise.">
+<meta name="author" content="Khalid Boudrar">
+<meta name="theme-color" content="#F4ECDB">
+<meta name="color-scheme" content="light">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="L'écosystème — MOUV-MENT">
+<meta property="og:description" content="Une maison, plusieurs marques. Startly, Optelys, AQN — et d'autres à venir.">
+<meta property="og:url" content="https://mouvment.fr/ecosysteme.html">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    color-scheme: light;
+    --cream: #F4ECDB;
+    --cream-light: #FAF3E2;
+    --cream-deep: #E8DEC7;
+    --cream-warm: #EFE3C9;
+    --ink: #1A1814;
+    --ink-soft: #4F4A40;
+    --ink-faint: #8A8275;
+    --gold: #B8893E;
+    --gold-deep: #8B6526;
+    --gold-light: #D4922E;
+    --rust: #A8543E;
+    --blue-deep: #3D5A82;
+    --line: rgba(26, 24, 20, 0.18);
+    --line-soft: rgba(26, 24, 20, 0.12);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--cream); color: var(--ink); }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6, p, ul, li, span, div, a { color: var(--ink); }
+  ul, li { list-style: none; }
+  a { color: inherit; }
+
+  /* REVEAL */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ============ HEADER ============ */
+  .site-header {
+    position: relative;
+    z-index: 20;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .header-logo {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    background: linear-gradient(95deg, var(--ink) 0%, #2C2520 28%, var(--gold-deep) 68%, var(--gold) 88%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .header-nav {
+    display: flex;
+    gap: 32px;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+  }
+  .header-nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .header-nav a.active { color: var(--ink); border-bottom-color: var(--gold); }
+  .header-nav a:hover { color: var(--ink); }
+  .header-cta {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 9px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    transition: background 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+  }
+  .header-cta:hover { background: var(--ink); color: var(--cream); }
+
+  /* ============ PAGE HERO (DISCRET) ============ */
+  .page-hero {
+    position: relative;
+    padding: 80px 36px 68px;
+    background:
+      radial-gradient(circle at 82% 28%, rgba(212, 146, 46, 0.30) 0%, transparent 48%),
+      radial-gradient(circle at 14% 78%, rgba(61, 90, 130, 0.22) 0%, transparent 46%),
+      linear-gradient(180deg, var(--cream-light) 0%, var(--cream) 70%, var(--cream-warm) 100%);
+    overflow: hidden;
+  }
+  .page-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .page-eyebrow {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--rust);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .page-title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin: 0 0 24px;
+  }
+  .page-title em {
+    font-style: italic;
+    color: var(--gold-deep);
+    font-weight: 500;
+  }
+  .page-statement {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.1vw, 1.3rem);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0;
+  }
+  .page-statement b { font-weight: 500; color: var(--ink); font-style: normal; }
+
+  /* ============ SECTION HEAD ============ */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 22px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 1.95rem);
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ============ BRANDS ============ */
+  .brands {
+    padding: 72px 36px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .brand-card {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 36px;
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .brand-card:last-of-type { border-bottom: 1px solid var(--line); }
+  .brand-left {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .brand-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--gold-deep);
+    line-height: 1;
+  }
+  .brand-status {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    display: inline-block;
+  }
+  .brand-status.live { background: var(--ink); color: var(--cream); }
+  .brand-status.prep {
+    background: var(--cream-deep);
+    color: var(--gold-deep);
+    border: 0.5px solid var(--gold);
+  }
+  .brand-status.soon {
+    background: transparent;
+    color: var(--ink-faint);
+    border: 0.5px solid var(--ink-faint);
+  }
+  .brand-center { min-width: 0; }
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3vw, 2.1rem);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .brand-name-light {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--ink-faint);
+    margin: 0 0 8px;
+  }
+  .brand-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .brand-spec {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+    color: var(--gold-deep);
+    margin: 0 0 16px;
+  }
+  .brand-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 560px;
+  }
+  .brand-desc em { font-style: italic; color: var(--gold-deep); }
+  .brand-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .brand-cta {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .brand-cta:hover { background: var(--ink); color: var(--cream); }
+  .brand-soon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .brand-card.future { opacity: 0.78; }
+  .brand-card.future .brand-num { color: var(--ink-faint); }
+
+  /* ============ SPINE ============ */
+  .spine {
+    background: var(--cream-warm);
+    padding: 72px 36px 84px;
+    margin-top: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .spine::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(168, 84, 62, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .spine-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .spine-intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.1vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 660px;
+    margin: 0 0 48px;
+  }
+  .spine-intro em { color: var(--gold-deep); }
+  .spine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .spine-item {
+    padding-top: 24px;
+    border-top: 1px solid rgba(139, 101, 38, 0.4);
+  }
+  .spine-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--gold-deep);
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .spine-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+  .spine-item p {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ============ FOOTER ============ */
+  footer.site-footer {
+    padding: 64px 36px 36px;
+    background: var(--ink);
+    color: var(--cream);
+  }
+  footer.site-footer * { color: var(--cream); }
+  .footer-grid {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .footer-brand-block { padding-right: 12px; }
+  .footer-mark {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    letter-spacing: -0.03em;
+    background: linear-gradient(95deg, #F4ECDB 0%, #F4ECDB 32%, #E0C58A 60%, #D4A14B 88%, #B8893E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+  .footer-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-faint) !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .footer-col h4 {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint) !important;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col li a, .footer-col li span {
+    font-size: 0.92rem;
+    text-decoration: none;
+    color: var(--cream);
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+  }
+  .footer-col li a:hover { color: var(--gold-light) !important; border-bottom-color: var(--gold); }
+  .footer-col li span { color: var(--ink-faint) !important; cursor: default; }
+  .footer-col li em {
+    font-style: italic;
+    color: var(--ink-faint) !important;
+    font-family: var(--serif);
+    font-size: 0.85rem;
+  }
+  .footer-legal {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.75rem;
+    color: var(--ink-faint) !important;
+    letter-spacing: 0.04em;
+    line-height: 1.9;
+    border-top: 1px solid rgba(244, 236, 219, 0.12);
+    padding-top: 28px;
+    text-align: center;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 820px) {
+    .header-inner { padding: 14px 22px; flex-wrap: wrap; gap: 12px; }
+    .header-logo { font-size: 1.1rem; }
+    .header-nav {
+      order: 3;
+      width: 100%;
+      gap: 20px;
+      font-size: 0.66rem;
+      justify-content: center;
+      padding-top: 8px;
+      border-top: 1px solid var(--line-soft);
+      margin-top: 4px;
+    }
+    .header-cta { padding: 7px 14px; font-size: 0.66rem; }
+    .page-hero { padding: 52px 22px 44px; }
+    .brands { padding: 48px 22px 20px; }
+    .brand-card { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+    .brand-left { flex-direction: row; align-items: center; gap: 14px; }
+    .brand-num { font-size: 1.6rem; }
+    .brand-right { justify-content: flex-start; }
+    .spine { padding: 52px 22px 60px; margin-top: 40px; }
+    .spine-grid { grid-template-columns: 1fr; gap: 28px; }
+    footer.site-footer { padding: 48px 22px 28px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .footer-brand-block { grid-column: 1 / -1; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">MOUV-MENT</a>
+    <nav class="header-nav">
+      <a href="index.html">Accueil</a>
+      <a href="ecosysteme.html" class="active">Écosystème</a>
+      <a href="index.html#fondateur">Fondateur</a>
+    </nav>
+    <a href="mailto:contact@mouvment.fr" class="header-cta">Écrire</a>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">§ Écosystème · La maison &amp; ses marques</p>
+    <h1 class="page-title">Une maison.<br><em>Plusieurs territoires d'expertise.</em></h1>
+    <p class="page-statement">MOUV-MENT chapeaute des marques spécialisées, chacune avec son public, son écosystème, son langage. Toutes liées par <b>la même exigence méthodologique</b>.</p>
+  </div>
+</section>
+
+<!-- ============ BRANDS ============ -->
+<section class="brands scroll-reveal">
+  <div class="section-head">
+    <span class="section-num">§ 01</span>
+    <h2 class="section-title">Les marques de la maison</h2>
+  </div>
+
+  <article class="brand-card">
+    <div class="brand-left">
+      <div class="brand-num">01</div>
+      <span class="brand-status live">En ligne</span>
+    </div>
+    <div class="brand-center">
+      <h3 class="brand-name">Startly</h3>
+      <p class="brand-tagline">Devenir entrepreneur, avec méthode.</p>
+      <p class="brand-spec">→ Accompagnement à l'entrepreneuriat</p>
+      <p class="brand-desc">Une formation entrepreneuriale nouvelle génération. 9 modules interactifs, des outils intégrés (Business Model Canvas, Business Plan), un coach IA personnalisé. Startly travaille sur <em>la personne</em> avant de travailler sur le projet.</p>
+    </div>
+    <div class="brand-right">
+      <a href="https://www.startly.fr" target="_blank" rel="noopener" class="brand-cta">Visiter startly.fr ↗</a>
+    </div>
+  </article>
+
+  <article class="brand-card">
+    <div class="brand-left">
+      <div class="brand-num">02</div>
+      <span class="brand-status live">En ligne</span>
+    </div>
+    <div class="brand-center">
+      <h3 class="brand-name">Optelys</h3>
+      <p class="brand-tagline">Le bilan de compétences, nouvelle génération.</p>
+      <p class="brand-spec">→ Bilans de compétences</p>
+      <p class="brand-desc">25 modules gamifiés, des outils exclusifs, l'alliance d'une IA d'analyse et d'un coaching humain. Pour les personnes en transition, en reconversion, ou en réflexion sur la suite de leur trajectoire. Finançable CPF.</p>
+    </div>
+    <div class="brand-right">
+      <a href="https://www.optelys.fr" target="_blank" rel="noopener" class="brand-cta">Visiter optelys.fr ↗</a>
+    </div>
+  </article>
+
+  <article class="brand-card">
+    <div class="brand-left">
+      <div class="brand-num">03</div>
+      <span class="brand-status prep">En préparation</span>
+    </div>
+    <div class="brand-center">
+      <h3 class="brand-name">AQN</h3>
+      <p class="brand-tagline">Coaching intégratif par les Trois Centres.</p>
+      <p class="brand-spec">→ Outils &amp; formations pour coachs, psys, thérapeutes, formateurs</p>
+      <p class="brand-desc">Une méthode qui puise dans 800 ans de tradition philosophique arabo-persane — Ibn Sina, Al-Ghazali, Ibn Rushd, Ibn ʿArabī — réactivée dans un cadre rigoureusement professionnel et non confessionnel. AQN ne remplace pas vos outils typologiques : il leur ajoute ce qui leur manque, la mesure du <em>mouvement</em>.</p>
+    </div>
+    <div class="brand-right">
+      <span class="brand-soon">Diffusion en préparation</span>
+    </div>
+  </article>
+
+  <article class="brand-card future">
+    <div class="brand-left">
+      <div class="brand-num">+</div>
+      <span class="brand-status soon">À venir</span>
+    </div>
+    <div class="brand-center">
+      <h3 class="brand-name-light">D'autres marques en gestation</h3>
+      <p class="brand-desc">La maison continue d'éditer. De nouvelles marques verront le jour pour adresser d'autres publics, d'autres territoires d'accompagnement professionnel — toujours sous l'exigence méthodologique de MOUV-MENT.</p>
+    </div>
+    <div class="brand-right"></div>
+  </article>
+</section>
+
+<!-- ============ SPINE ============ -->
+<section class="spine scroll-reveal">
+  <div class="spine-inner">
+    <div class="section-head">
+      <span class="section-num">§ 02</span>
+      <h2 class="section-title">La colonne vertébrale</h2>
+    </div>
+    <p class="spine-intro">Si les marques ont chacune leur voix, ce qui les unit n'est jamais accessoire. C'est ce qui fait de l'écosystème <em>une maison</em>, et non une collection.</p>
+
+    <div class="spine-grid">
+      <div class="spine-item">
+        <span class="spine-num">i.</span>
+        <h4 class="spine-name">La méta-posture</h4>
+        <p>Coacher, former, conseiller, mentorer. Quatre postures que toutes nos marques pratiquent — sans jamais les confondre.</p>
+      </div>
+      <div class="spine-item">
+        <span class="spine-num">ii.</span>
+        <h4 class="spine-name">Les Protocoles JAM, MOVA, PULSE</h4>
+        <p>Une signature méthodologique propre à MOUV-MENT, conçue comme outils propriétaires d'analyse typologique, comportementale, émotionnelle et motivationnelle. Présente, à différents degrés, dans chaque marque.</p>
+      </div>
+      <div class="spine-item">
+        <span class="spine-num">iii.</span>
+        <h4 class="spine-name">L'exigence du mouvement</h4>
+        <p>Transformer réellement les parcours, pas seulement les décrire. C'est la promesse-mère que chaque marque décline selon son public.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand-block">
+      <div class="footer-mark">MOUV-MENT</div>
+      <p class="footer-tag">Maison de méthodes<br>Édition 2026</p>
+    </div>
+    <div class="footer-col">
+      <h4>Écosystème</h4>
+      <ul>
+        <li><a href="https://www.startly.fr" target="_blank" rel="noopener">Startly ↗</a></li>
+        <li><a href="https://www.optelys.fr" target="_blank" rel="noopener">Optelys ↗</a></li>
+        <li><span>AQN <em>(prochainement)</em></span></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>La maison</h4>
+      <ul>
+        <li><a href="index.html#fondateur">Le fondateur</a></li>
+        <li><a href="ecosysteme.html">L'écosystème</a></li>
+        <li><a href="mailto:contact@mouvment.fr">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Écrivez-nous</h4>
+      <ul>
+        <li><a href="mailto:contact@mouvment.fr">contact@mouvment.fr</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-legal">
+    MOUV-MENT SASU &nbsp;·&nbsp; Capital 1 000 € &nbsp;·&nbsp; SIREN 101 052 728 &nbsp;·&nbsp; 8 bis rue Abel, 75012 Paris
+  </p>
+</footer>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.scroll-reveal').forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.scroll-reveal').forEach(function (el) { observer.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
