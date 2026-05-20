@@ -464,6 +464,168 @@
     text-align: center;
   }
 
+
+  /* ============ CONTACT POPUP ============ */
+  .contact-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 24, 20, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5vh 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    overflow-y: auto;
+  }
+  .contact-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .contact-modal {
+    background: var(--cream-light);
+    border-radius: 14px;
+    max-width: 560px;
+    width: 100%;
+    padding: 44px 40px 36px;
+    box-shadow: 0 30px 80px rgba(26, 24, 20, 0.35);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+    border: 1px solid var(--line-soft);
+  }
+  .contact-overlay.active .contact-modal { transform: translateY(0); }
+  .contact-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--ink-faint);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .contact-close:hover { background: var(--cream-deep); color: var(--ink); }
+  .contact-title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 8px;
+    line-height: 1.1;
+  }
+  .contact-intro {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin: 0 0 28px;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 18px; }
+  .form-row { display: flex; flex-direction: column; gap: 6px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-grid > div { display: flex; flex-direction: column; gap: 6px; }
+  .form-row label, .form-grid label {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea,
+  .form-grid input {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 11px 14px;
+    line-height: 1.4;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    width: 100%;
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus,
+  .form-grid input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: #FFFFFF;
+  }
+  .form-row textarea { resize: vertical; min-height: 110px; font-family: var(--sans); }
+  .form-row select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A8275' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .form-submit {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    padding: 13px 28px;
+    background: var(--ink);
+    color: var(--cream);
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .form-submit:hover:not(:disabled) {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+    transform: translateY(-1px);
+  }
+  .form-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+  .form-status {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .form-status.success { color: #3A6E4F; font-style: normal; }
+  .form-status.error { color: var(--rust); font-style: normal; }
+  @media (max-width: 540px) {
+    .contact-modal { padding: 36px 24px 28px; }
+    .contact-title { font-size: 1.45rem; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
   /* ============ MOBILE ============ */
   @media (max-width: 820px) {
     .header-inner { padding: 14px 22px; flex-wrap: wrap; gap: 12px; }
@@ -507,7 +669,7 @@
       <a href="ecosysteme.html" class="active">Écosystème</a>
       <a href="index.html#fondateur">Fondateur</a>
     </nav>
-    <a href="mailto:contact@mouvment.fr" class="header-cta">Écrire</a>
+    <a href="mailto:contact@mouvment.fr" class="header-cta" data-contact-trigger>Écrire</a>
   </div>
 </header>
 
@@ -637,13 +799,13 @@
       <ul>
         <li><a href="index.html#fondateur">Le fondateur</a></li>
         <li><a href="ecosysteme.html">L'écosystème</a></li>
-        <li><a href="mailto:contact@mouvment.fr">Contact</a></li>
+        <li><a href="mailto:contact@mouvment.fr" data-contact-trigger>Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Écrivez-nous</h4>
       <ul>
-        <li><a href="mailto:contact@mouvment.fr">contact@mouvment.fr</a></li>
+        <li><a href="mailto:contact@mouvment.fr" data-contact-trigger>contact@mouvment.fr</a></li>
       </ul>
     </div>
   </div>
@@ -667,6 +829,124 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.scroll-reveal').forEach(function (el) { observer.observe(el); });
+  })();
+</script>
+
+
+<!-- ============ CONTACT POPUP ============ -->
+<div id="contact-overlay" class="contact-overlay" aria-hidden="true">
+  <div class="contact-modal" role="dialog" aria-labelledby="contact-title" aria-modal="true">
+    <button class="contact-close" type="button" aria-label="Fermer">×</button>
+    <h2 id="contact-title" class="contact-title">Écrivez-nous</h2>
+    <p class="contact-intro">Une question, un projet, une collaboration ? Cette boîte est lue par Khalid.</p>
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="form-row">
+        <label for="contact-nom">Nom complet *</label>
+        <input type="text" id="contact-nom" name="nom" required maxlength="100" autocomplete="name">
+      </div>
+      <div class="form-grid">
+        <div>
+          <label for="contact-email">Email *</label>
+          <input type="email" id="contact-email" name="email" required maxlength="200" autocomplete="email">
+        </div>
+        <div>
+          <label for="contact-tel">Téléphone</label>
+          <input type="tel" id="contact-tel" name="telephone" maxlength="30" autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="contact-objet">Objet *</label>
+        <select id="contact-objet" name="objet" required>
+          <option value="">— Choisir —</option>
+          <option value="Question générale">Question générale</option>
+          <option value="Demande d'information sur une marque">Demande d'information sur une marque</option>
+          <option value="Proposition de partenariat">Proposition de partenariat</option>
+          <option value="Presse / Média">Presse / Média</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="contact-message">Message *</label>
+        <textarea id="contact-message" name="message" required rows="5" maxlength="2000"></textarea>
+      </div>
+      <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-actions">
+        <button type="submit" class="form-submit">Envoyer le message</button>
+        <span class="form-status" id="contact-status" aria-live="polite"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('contact-overlay');
+    if (!overlay) return;
+    var closeBtn = overlay.querySelector('.contact-close');
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('contact-status');
+    var submitBtn = form.querySelector('.form-submit');
+
+    function openModal() {
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { document.getElementById('contact-nom').focus(); }, 200);
+    }
+    function closeModal() {
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      status.textContent = '';
+      status.className = 'form-status';
+    }
+
+    document.querySelectorAll('[data-contact-trigger]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi…';
+      status.textContent = '';
+      status.className = 'form-status';
+
+      var data = Object.fromEntries(new FormData(form));
+      try {
+        var resp = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        var json = await resp.json();
+        if (resp.ok && json.success) {
+          status.textContent = '✓ Message envoyé. Merci, nous revenons vers vous rapidement.';
+          status.className = 'form-status success';
+          form.reset();
+          setTimeout(closeModal, 3000);
+        } else {
+          throw new Error((json && json.error) || 'Erreur inconnue');
+        }
+      } catch (err) {
+        status.textContent = '✗ Échec de l\'envoi. Réessayez ou écrivez à contact@mouvment.fr.';
+        status.className = 'form-status error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer le message';
+      }
+    });
   })();
 </script>
 

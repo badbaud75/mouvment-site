@@ -1,0 +1,23 @@
+# Système
+.DS_Store
+Thumbs.db
+
+# Dépendances
+node_modules/
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Sauvegardes
+*.backup
+*.bak
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
