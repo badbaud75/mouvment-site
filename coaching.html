@@ -854,22 +854,23 @@
 .cg-root .prose p+p{margin-top:13px;}
 .cg-root .prose b{color:var(--ink);font-weight:500;}
 .cg-root .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px;}
-.cg-root .card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:4px;padding:24px 20px;}
+.cg-root .card{background:var(--paper);border:1px solid rgba(26,24,20,.09);border-top:3px solid var(--gold);border-radius:18px;padding:26px 24px;box-shadow:0 4px 18px rgba(26,24,20,.05);transition:transform .25s ease,box-shadow .25s ease;}
+.cg-root .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(26,24,20,.09);}
 .cg-root .card:nth-child(1){border-top-color:var(--blue);}
 .cg-root .card:nth-child(2){border-top-color:var(--gold);}
 .cg-root .card:nth-child(3){border-top-color:var(--rust);}
-.cg-root .card .tag{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;display:block;margin-bottom:9px;}
-.cg-root .card h3{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin-bottom:7px;letter-spacing:-.01em;color:var(--ink);}
-.cg-root .card p{font-size:.92rem;color:var(--ink-soft);line-height:1.55;}
+.cg-root .card .tag{font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;display:block;margin-bottom:9px;}
+.cg-root .card h3{font-family:var(--serif);font-weight:600;font-size:1.22rem;margin-bottom:8px;letter-spacing:-.01em;color:var(--ink);}
+.cg-root .card p{font-size:.9rem;color:var(--ink-soft);line-height:1.55;}
 .cg-root .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
 .cg-root .pill{background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:7px 15px;font-size:.88rem;color:var(--ink-soft);}
 .cg-root .deonto-note{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--ink-faint);margin-top:20px;display:flex;align-items:center;gap:12px;}
 .cg-root .deonto-note::before{content:'';width:22px;height:1px;background:var(--gold);display:inline-block;flex-shrink:0;}
-.cg-root .agenda-shell{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:clamp(1.3rem,3vw,2.2rem);margin-top:26px;}
+.cg-root .agenda-shell{background:var(--paper);border:1px solid rgba(26,24,20,.09);border-radius:18px;padding:clamp(1.3rem,3vw,2.2rem);margin-top:26px;box-shadow:0 4px 18px rgba(26,24,20,.05);}
 .cg-root .step-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin:0 0 13px;}
 .cg-root .step-label.spaced{margin-top:30px;}
 .cg-root .parcours{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
-.cg-root .pcard{text-align:left;background:var(--cream);border:1.5px solid var(--line);border-radius:6px;padding:15px 17px;cursor:pointer;font-family:inherit;color:var(--ink);transition:all .15s;}
+.cg-root .pcard{text-align:left;background:var(--cream);border:1.5px solid var(--line);border-radius:14px;padding:15px 17px;cursor:pointer;font-family:inherit;color:var(--ink);transition:all .15s;}
 .cg-root .pcard:hover{border-color:var(--gold);}
 .cg-root .pcard.selected{border-color:var(--gold);background:var(--cream-deep);}
 .cg-root .pcard .pc-title{font-family:var(--serif);font-size:1.15rem;font-weight:600;display:block;color:var(--ink);}
@@ -883,7 +884,7 @@
 .cg-root .weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:7px;}
 .cg-root .weekdays span{text-align:center;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;}
 .cg-root .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
-.cg-root .day{aspect-ratio:1;border:1px solid transparent;border-radius:8px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;color:var(--ink);transition:all .15s;position:relative;}
+.cg-root .day{aspect-ratio:1;border:1px solid transparent;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;color:var(--ink);transition:all .15s;position:relative;}
 .cg-root .day:hover:not(.disabled):not(.empty){background:var(--cream-deep);border-color:var(--gold);}
 .cg-root .day.empty{background:transparent;cursor:default;}
 .cg-root .day.disabled{color:var(--ink-faint);background:transparent;cursor:not-allowed;}
@@ -894,32 +895,23 @@
 .cg-root .slots-zone .when{font-size:.9rem;color:var(--ink-soft);margin-bottom:13px;}
 .cg-root .slots-zone .when b{color:var(--ink);}
 .cg-root .slots{display:flex;flex-wrap:wrap;gap:8px;}
-.cg-root .slot{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:8px 15px;font-size:.9rem;cursor:pointer;color:var(--ink);transition:all .15s;}
+.cg-root .slot{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:8px 15px;font-size:.9rem;cursor:pointer;color:var(--ink);transition:all .15s;}
 .cg-root .slot:hover{border-color:var(--gold);background:var(--cream-deep);}
 .cg-root .slot.selected{background:var(--gold-deep);color:var(--cream);border-color:var(--gold-deep);}
 .cg-root .hint{font-size:.83rem;color:var(--ink-faint);margin-top:8px;}
-.cg-root .bform{margin-top:22px;display:grid;gap:13px;}
-.cg-root .bform .row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
-.cg-root .field label{display:block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;margin-bottom:6px;}
-.cg-root .field input,.cg-root .field textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-family:inherit;font-size:.93rem;color:var(--ink);background:var(--cream);}
-.cg-root .field input:focus,.cg-root .field textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
-.cg-root .field textarea{resize:vertical;min-height:78px;}
-.cg-root .submit{background:var(--gold-deep);color:var(--cream);border:none;border-radius:100px;padding:12px 26px;font-family:inherit;font-size:.93rem;font-weight:500;letter-spacing:.02em;cursor:pointer;justify-self:start;transition:transform .2s,background .2s;}
+.cg-root .booking-go{margin-top:20px;}
+.cg-root .submit{background:var(--gold-deep);color:var(--cream);border:none;border-radius:100px;padding:13px 28px;font-family:inherit;font-size:.95rem;font-weight:500;letter-spacing:.02em;cursor:pointer;transition:transform .2s,background .2s;}
 .cg-root .submit:hover{transform:translateY(-1px);background:#74531f;}
-.cg-root .ack{background:var(--cream-deep);border:1px solid var(--gold);border-radius:8px;padding:18px 20px;margin-top:20px;font-size:.92rem;color:var(--ink);display:none;}
-.cg-root .ack.show{display:block;}
-.cg-root .ack a{color:var(--gold-deep);font-weight:500;}
 .cg-root .entreprise{margin-top:22px;font-size:.9rem;color:var(--ink-soft);text-align:center;max-width:600px;margin-left:auto;margin-right:auto;}
 .cg-root .entreprise a{color:var(--gold-deep);font-weight:500;text-decoration:none;}
-.cg-root .cg-final{text-align:center;background:var(--ink);border-bottom:none;}
+.cg-root .cg-final{text-align:center;background:var(--cream-deep);border-bottom:none;}
 .cg-root .cg-final .wrap{max-width:680px;}
-.cg-root .cg-final .section-title{color:var(--cream);}
-.cg-root .cg-final .section-title em{color:var(--gold);}
-.cg-root .cg-final .prose{color:rgba(244,236,219,.72);margin:0 auto 26px;max-width:none;}
-.cg-root .cg-final .cta{display:inline-block;background:var(--gold);color:var(--ink);text-decoration:none;padding:13px 30px;border-radius:100px;font-weight:500;letter-spacing:.02em;transition:transform .2s;}
-.cg-root .cg-final .cta:hover{transform:translateY(-1px);}
-footer.site-footer .footer-deonto{font-family:var(--serif);font-style:italic;font-size:.82rem;color:rgba(244,236,219,.62);text-align:center;max-width:1200px;margin:0 auto;padding:16px 36px 0;}
-@media(max-width:600px){.cg-root .cg-section{padding:44px 22px;}.cg-root .cg-hero{padding:46px 22px 38px;}.cg-root .parcours{grid-template-columns:1fr;}.cg-root .bform .row{grid-template-columns:1fr;}}
+.cg-root .cg-final .section-title{color:var(--ink);}
+.cg-root .cg-final .section-title em{color:var(--gold-deep);}
+.cg-root .cg-final .prose{color:var(--ink-soft);margin:0 auto 26px;max-width:none;}
+.cg-root .cg-final .cta{display:inline-block;background:var(--gold-deep);color:var(--cream);text-decoration:none;padding:13px 30px;border-radius:100px;font-weight:500;letter-spacing:.02em;transition:transform .2s,background .2s;}
+.cg-root .cg-final .cta:hover{transform:translateY(-1px);background:#74531f;}
+@media(max-width:600px){.cg-root .cg-section{padding:44px 22px;}.cg-root .cg-hero{padding:46px 22px 38px;}.cg-root .parcours{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -1015,18 +1007,10 @@ footer.site-footer .footer-deonto{font-family:var(--serif);font-style:italic;fon
           <div class="when">Créneaux du <b id="selectedDate">—</b></div>
           <div class="slots" id="slotList"></div>
           <div class="hint" id="cadrageHint">60 min en visioconférence · déductible du programme · règlement par virement après confirmation.</div>
-        </div>
-        <form class="bform" id="bform" style="display:none;" novalidate>
-          <div class="step-label" style="margin:0 0 .2rem;">3 · Vos coordonnées</div>
-          <div class="row">
-            <div class="field"><label for="f-nom">Nom complet</label><input id="f-nom" type="text" required></div>
-            <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel"></div>
+          <div class="booking-go" id="bookingGo" style="display:none;">
+            <button type="button" class="submit" id="openBooking">Demander ce créneau</button>
           </div>
-          <div class="field"><label for="f-mail">E-mail</label><input id="f-mail" type="email" required></div>
-          <div class="field"><label for="f-msg">En quelques mots, ce qui vous amène</label><textarea id="f-msg"></textarea></div>
-          <button class="submit" type="submit">Demander ce créneau</button>
-        </form>
-        <div class="ack" id="ack"><strong>Votre demande est prête.</strong><br>Votre messagerie s'est ouverte avec le récapitulatif — il ne reste qu'à l'envoyer. Je vous confirme ensuite le créneau et vous transmets les coordonnées de règlement par virement.<span id="icsLine"> Vous pouvez aussi <a href="#" id="icsLink">ajouter le créneau à votre agenda</a> (provisoire, à confirmer après mon retour).</span></div>
+        </div>
       </div>
 
       <p class="entreprise">Vous représentez une entreprise ou une équipe (intra, atelier) ? <a href="#" id="entrepriseMail">Écrivez-moi directement</a> — on cadre votre besoin sans passer par la réservation en ligne.</p>
@@ -1071,7 +1055,6 @@ footer.site-footer .footer-deonto{font-family:var(--serif);font-style:italic;fon
       </ul>
     </div>
   </div>
-    <p class="footer-deonto">Pratique conforme au code de déontologie global du coaching.</p>
   <p class="footer-legal">
     MOUV-MENT SASU &nbsp;·&nbsp; Capital 1 000 € &nbsp;·&nbsp; SIREN 101 052 728 &nbsp;·&nbsp; 8 bis rue Abel, 75012 Paris
   </p>
@@ -1193,155 +1176,217 @@ footer.site-footer .footer-deonto{font-family:var(--serif);font-style:italic;fon
   })();
 </script>
 
+<div id="booking-overlay" class="contact-overlay" aria-hidden="true">
+  <div class="contact-modal" role="dialog" aria-labelledby="booking-title" aria-modal="true">
+    <button class="contact-close" type="button" aria-label="Fermer" id="booking-close">×</button>
+    <h2 id="booking-title" class="contact-title">Demander ce créneau</h2>
+    <p class="contact-intro" id="booking-recap">—</p>
+    <form id="booking-form" class="contact-form" novalidate>
+      <div class="form-row">
+        <label for="booking-nom">Nom complet *</label>
+        <input type="text" id="booking-nom" name="nom" required maxlength="100" autocomplete="name">
+      </div>
+      <div class="form-grid">
+        <div>
+          <label for="booking-email">Email *</label>
+          <input type="email" id="booking-email" name="email" required maxlength="200" autocomplete="email">
+        </div>
+        <div>
+          <label for="booking-tel">Téléphone</label>
+          <input type="tel" id="booking-tel" name="telephone" maxlength="30" autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="booking-msg">En quelques mots, ce qui vous amène</label>
+        <textarea id="booking-msg" name="note" rows="4" maxlength="2000"></textarea>
+      </div>
+      <input type="text" id="booking-honeypot" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-actions">
+        <button type="submit" class="form-submit" id="booking-submit">Envoyer ma demande</button>
+        <span class="form-status" id="booking-status" aria-live="polite"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
 <script>
-const AQN = {
-  email:        "contact@mouvment.fr",
-  coachName:    "MOUV-MENT",
-  sessionLabel: "S\u00e9ance de cadrage AQN",
-  durationMin:  60,
-  parcours: {
-    perso: { label:"Perso (coaching)",          price:"120 \u20ac TTC" },
-    pro:   { label:"Pro (coaching/consulting)", price:"300 \u20ac HT"  }
-  },
-  availableWeekdays: [1,2,3,4,5],
-  slots:        ["09:00","10:00","11:00","14:00","15:00","16:00","18:00"],
-  weeksAhead:   8
-};
-const MONTHS = ["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"];
-const today = new Date(); today.setHours(0,0,0,0);
-const maxDate = new Date(today); maxDate.setDate(maxDate.getDate() + AQN.weeksAhead*7);
-let viewMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-let selectedDate = null, selectedSlot = null, selectedParcours = null;
-const grid = document.getElementById('calGrid');
-const monthLabel = document.getElementById('monthLabel');
-const prevM = document.getElementById('prevM'), nextM = document.getElementById('nextM');
-const slotsZone = document.getElementById('slotsZone'), slotList = document.getElementById('slotList');
-const selectedDateEl = document.getElementById('selectedDate');
-const bform = document.getElementById('bform'), ack = document.getElementById('ack');
-const parcoursEl = document.getElementById('parcours');
-const cadrageHint = document.getElementById('cadrageHint');
-document.getElementById('entrepriseMail').href = "mailto:"+AQN.email;
-document.querySelector('[data-price-perso]').textContent = AQN.parcours.perso.price;
-document.querySelector('[data-price-pro]').textContent   = AQN.parcours.pro.price;
-function refreshHint(){
-  if(selectedParcours){
-    const p = AQN.parcours[selectedParcours];
-    cadrageHint.textContent = p.price + " \u00b7 60 min en visioconf\u00e9rence \u00b7 d\u00e9ductible du programme \u00b7 r\u00e8glement par virement apr\u00e8s confirmation.";
+(function(){
+  var AQN = {
+    parcours: {
+      perso: { label:"Perso (coaching)",          price:"120 \u20ac TTC" },
+      pro:   { label:"Pro (coaching/consulting)", price:"300 \u20ac HT"  }
+    },
+    availableWeekdays: [1,2,3,4,5],
+    slots:        ["09:00","10:00","11:00","14:00","15:00","16:00","18:00"],
+    weeksAhead:   8,
+    sessionLabel: "S\u00e9ance de cadrage AQN",
+    email:        "contact@mouvment.fr"
+  };
+  var MONTHS = ["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"];
+  var today = new Date(); today.setHours(0,0,0,0);
+  var maxDate = new Date(today); maxDate.setDate(maxDate.getDate() + AQN.weeksAhead*7);
+  var viewMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  var selectedDate = null, selectedSlot = null, selectedParcours = null;
+
+  var grid = document.getElementById('calGrid');
+  var monthLabel = document.getElementById('monthLabel');
+  var prevM = document.getElementById('prevM'), nextM = document.getElementById('nextM');
+  var slotsZone = document.getElementById('slotsZone'), slotList = document.getElementById('slotList');
+  var selectedDateEl = document.getElementById('selectedDate');
+  var parcoursEl = document.getElementById('parcours');
+  var cadrageHint = document.getElementById('cadrageHint');
+  var bookingGo = document.getElementById('bookingGo');
+  var openBtn = document.getElementById('openBooking');
+
+  var bOverlay = document.getElementById('booking-overlay');
+  var bClose = document.getElementById('booking-close');
+  var bForm = document.getElementById('booking-form');
+  var bStatus = document.getElementById('booking-status');
+  var bSubmit = document.getElementById('booking-submit');
+  var bRecap = document.getElementById('booking-recap');
+  var bNom = document.getElementById('booking-nom');
+  var bEmail = document.getElementById('booking-email');
+  var bTel = document.getElementById('booking-tel');
+  var bMsg = document.getElementById('booking-msg');
+  var bHoney = document.getElementById('booking-honeypot');
+
+  document.getElementById('entrepriseMail').href = "mailto:"+AQN.email;
+  document.querySelector('[data-price-perso]').textContent = AQN.parcours.perso.price;
+  document.querySelector('[data-price-pro]').textContent   = AQN.parcours.pro.price;
+
+  function refreshHint(){
+    if(selectedParcours){
+      var p = AQN.parcours[selectedParcours];
+      cadrageHint.textContent = p.price + " \u00b7 60 min en visioconf\u00e9rence \u00b7 d\u00e9ductible du programme \u00b7 r\u00e8glement par virement apr\u00e8s confirmation.";
+    }
   }
-}
-parcoursEl.querySelectorAll('.pcard').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    selectedParcours = btn.dataset.p;
-    parcoursEl.querySelectorAll('.pcard').forEach(function(b){ b.classList.remove('selected'); });
-    btn.classList.add('selected');
-    refreshHint();
+  parcoursEl.querySelectorAll('.pcard').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      selectedParcours = btn.dataset.p;
+      parcoursEl.querySelectorAll('.pcard').forEach(function(b){ b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      refreshHint();
+    });
   });
-});
-function sameDay(a,b){return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate();}
-function isBookable(d){ if(d<today||d>maxDate) return false; return AQN.availableWeekdays.includes(d.getDay()); }
-function fmtLong(d){ return d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear(); }
-function renderCalendar(){
-  monthLabel.textContent = MONTHS[viewMonth.getMonth()]+" "+viewMonth.getFullYear();
-  grid.innerHTML = "";
-  const firstDay = new Date(viewMonth.getFullYear(),viewMonth.getMonth(),1);
-  let lead = (firstDay.getDay()+6)%7;
-  for(let i=0;i<lead;i++){ const e=document.createElement('div'); e.className='day empty'; grid.appendChild(e); }
-  const daysInMonth = new Date(viewMonth.getFullYear(),viewMonth.getMonth()+1,0).getDate();
-  for(let d=1;d<=daysInMonth;d++){
-    const date = new Date(viewMonth.getFullYear(),viewMonth.getMonth(),d);
-    const cell = document.createElement('div');
-    cell.className='day'; cell.textContent=d;
-    if(isBookable(date)){
-      cell.classList.add('has-slots');
-      if(selectedDate&&sameDay(date,selectedDate)) cell.classList.add('selected');
-      cell.addEventListener('click',function(){ selectDay(date); });
-    } else { cell.classList.add('disabled'); }
-    grid.appendChild(cell);
+
+  function sameDay(a,b){ return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate(); }
+  function isBookable(d){ if(d<today||d>maxDate) return false; return AQN.availableWeekdays.indexOf(d.getDay())!==-1; }
+  function fmtLong(d){ return d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear(); }
+
+  function renderCalendar(){
+    monthLabel.textContent = MONTHS[viewMonth.getMonth()]+" "+viewMonth.getFullYear();
+    grid.innerHTML = "";
+    var firstDay = new Date(viewMonth.getFullYear(),viewMonth.getMonth(),1);
+    var lead = (firstDay.getDay()+6)%7;
+    for(var i=0;i<lead;i++){ var e=document.createElement('div'); e.className='day empty'; grid.appendChild(e); }
+    var daysInMonth = new Date(viewMonth.getFullYear(),viewMonth.getMonth()+1,0).getDate();
+    for(var d=1;d<=daysInMonth;d++){
+      (function(day){
+        var date = new Date(viewMonth.getFullYear(),viewMonth.getMonth(),day);
+        var cell = document.createElement('div');
+        cell.className='day'; cell.textContent=day;
+        if(isBookable(date)){
+          cell.classList.add('has-slots');
+          if(selectedDate&&sameDay(date,selectedDate)) cell.classList.add('selected');
+          cell.addEventListener('click',function(){ selectDay(date); });
+        } else { cell.classList.add('disabled'); }
+        grid.appendChild(cell);
+      })(d);
+    }
+    var prevLimit = new Date(today.getFullYear(),today.getMonth(),1);
+    prevM.disabled = viewMonth<=prevLimit;
+    var maxMonth = new Date(maxDate.getFullYear(),maxDate.getMonth(),1);
+    nextM.disabled = viewMonth>=maxMonth;
   }
-  const prevLimit = new Date(today.getFullYear(),today.getMonth(),1);
-  prevM.disabled = viewMonth<=prevLimit;
-  const maxMonth = new Date(maxDate.getFullYear(),maxDate.getMonth(),1);
-  nextM.disabled = viewMonth>=maxMonth;
-}
-function selectDay(date){
-  selectedDate=date; selectedSlot=null;
+
+  function selectDay(date){
+    selectedDate=date; selectedSlot=null;
+    renderCalendar();
+    selectedDateEl.textContent=fmtLong(date);
+    slotList.innerHTML="";
+    AQN.slots.forEach(function(t){
+      var s=document.createElement('div');
+      s.className='slot'; s.textContent=t;
+      s.addEventListener('click',function(){ selectSlot(t,s); });
+      slotList.appendChild(s);
+    });
+    slotsZone.style.display='block';
+    bookingGo.style.display='none';
+    slotsZone.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  function selectSlot(time,el){
+    selectedSlot=time;
+    Array.prototype.forEach.call(slotList.children,function(c){ c.classList.remove('selected'); });
+    el.classList.add('selected');
+    bookingGo.style.display='block';
+    bookingGo.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  function openBooking(){
+    if(!selectedParcours){ alert("Choisissez d'abord votre parcours (Perso ou Pro)."); parcoursEl.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+    if(!selectedDate||!selectedSlot){ alert("Choisissez une date puis un cr\u00e9neau."); return; }
+    var p = AQN.parcours[selectedParcours];
+    bRecap.textContent = AQN.sessionLabel+" \u00b7 "+p.label+" ("+p.price+") \u00b7 "+fmtLong(selectedDate)+" \u00e0 "+selectedSlot+" \u00b7 60 min en visioconf\u00e9rence.";
+    bStatus.textContent=''; bStatus.className='form-status';
+    bOverlay.classList.add('active');
+    bOverlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){ bNom.focus(); },200);
+  }
+  function closeBooking(){
+    bOverlay.classList.remove('active');
+    bOverlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  openBtn.addEventListener('click', openBooking);
+  bClose.addEventListener('click', closeBooking);
+  bOverlay.addEventListener('click', function(e){ if(e.target===bOverlay) closeBooking(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && bOverlay.classList.contains('active')) closeBooking(); });
+
+  bForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom=bNom.value.trim(), email=bEmail.value.trim(), tel=bTel.value.trim(), note=bMsg.value.trim();
+    if(!nom||!email){ bStatus.textContent="Merci d'indiquer au moins votre nom et votre e-mail."; bStatus.className='form-status error'; return; }
+    var p=AQN.parcours[selectedParcours];
+    var dateStr=fmtLong(selectedDate);
+    var objet="R\u00e9servation s\u00e9ance de cadrage AQN \u2014 "+p.label+" \u2014 "+dateStr+" "+selectedSlot;
+    var message=
+      "Demande de r\u00e9servation \u2014 "+AQN.sessionLabel+"\n\n"+
+      "Parcours : "+p.label+" \u2014 "+p.price+"\n"+
+      "Cr\u00e9neau souhait\u00e9 : "+dateStr+" \u00e0 "+selectedSlot+"\n"+
+      "Format : 60 min en visioconf\u00e9rence\n\n"+
+      "Ce qui m'am\u00e8ne :\n"+(note||"\u2014");
+    bSubmit.disabled=true; bSubmit.textContent='Envoi\u2026';
+    bStatus.textContent=''; bStatus.className='form-status';
+    fetch('/api/contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({ nom:nom, email:email, telephone:tel, objet:objet, message:message, honeypot:bHoney.value })
+    }).then(function(resp){
+      return resp.json().then(function(json){ return { ok:resp.ok, json:json }; });
+    }).then(function(r){
+      if(r.ok && r.json && r.json.success){
+        bStatus.textContent="\u2713 Demande envoy\u00e9e. Je vous confirme le cr\u00e9neau tr\u00e8s vite.";
+        bStatus.className='form-status success';
+        bForm.reset();
+        setTimeout(closeBooking,3200);
+      } else {
+        throw new Error((r.json && r.json.error) || 'Erreur');
+      }
+    }).catch(function(){
+      bStatus.textContent="\u2717 \u00c9chec de l'envoi. R\u00e9essayez ou \u00e9crivez \u00e0 contact@mouvment.fr.";
+      bStatus.className='form-status error';
+    }).then(function(){
+      bSubmit.disabled=false; bSubmit.textContent='Envoyer ma demande';
+    });
+  });
+
+  prevM.addEventListener('click',function(){ viewMonth=new Date(viewMonth.getFullYear(),viewMonth.getMonth()-1,1); renderCalendar(); });
+  nextM.addEventListener('click',function(){ viewMonth=new Date(viewMonth.getFullYear(),viewMonth.getMonth()+1,1); renderCalendar(); });
   renderCalendar();
-  selectedDateEl.textContent=fmtLong(date);
-  slotList.innerHTML="";
-  AQN.slots.forEach(function(t){
-    const s=document.createElement('div');
-    s.className='slot'; s.textContent=t;
-    s.addEventListener('click',function(){ selectSlot(t,s); });
-    slotList.appendChild(s);
-  });
-  slotsZone.style.display='block';
-  bform.style.display='none'; ack.classList.remove('show');
-  slotsZone.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-function selectSlot(time,el){
-  selectedSlot=time;
-  Array.prototype.forEach.call(slotList.children,function(c){ c.classList.remove('selected'); });
-  el.classList.add('selected');
-  bform.style.display='grid';
-  ack.classList.remove('show');
-  bform.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-function pad(n){ return String(n).padStart(2,'0'); }
-function buildICS(){
-  const parts = selectedSlot.split(':').map(Number);
-  const h = parts[0], m = parts[1];
-  const start=new Date(selectedDate); start.setHours(h,m,0,0);
-  const end=new Date(start); end.setMinutes(end.getMinutes()+AQN.durationMin);
-  const z=function(d){ return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+"T"+pad(d.getHours())+pad(d.getMinutes())+"00"; };
-  const pLabel = selectedParcours ? AQN.parcours[selectedParcours].label : "";
-  const ics =
-"BEGIN:VCALENDAR\r\n"+
-"VERSION:2.0\r\n"+
-"PRODID:-//MOUV-MENT//AQN//FR\r\n"+
-"BEGIN:VEVENT\r\n"+
-"UID:"+Date.now()+"@mouvment.fr\r\n"+
-"DTSTAMP:"+z(new Date())+"\r\n"+
-"DTSTART:"+z(start)+"\r\n"+
-"DTEND:"+z(end)+"\r\n"+
-"SUMMARY:"+AQN.sessionLabel+(pLabel?" \u2014 "+pLabel:"")+" \u2014 "+AQN.coachName+"\r\n"+
-"DESCRIPTION:Cr\u00e9neau demand\u00e9 (provisoire\\, \u00e0 confirmer par "+AQN.coachName+"). R\u00e8glement par virement.\r\n"+
-"END:VEVENT\r\n"+
-"END:VCALENDAR";
-  return new Blob([ics],{type:'text/calendar'});
-}
-bform.addEventListener('submit',function(e){
-  e.preventDefault();
-  const nom=document.getElementById('f-nom').value.trim();
-  const mail=document.getElementById('f-mail').value.trim();
-  const tel=document.getElementById('f-tel').value.trim();
-  const msg=document.getElementById('f-msg').value.trim();
-  if(!selectedParcours){ alert("Choisissez d'abord votre parcours (Perso ou Pro)."); parcoursEl.scrollIntoView({behavior:'smooth',block:'center'}); return; }
-  if(!nom||!mail){ alert("Merci d'indiquer au moins votre nom et votre e-mail."); return; }
-  const p=AQN.parcours[selectedParcours];
-  const dateStr=fmtLong(selectedDate);
-  const subject="Demande de s\u00e9ance de cadrage AQN \u2014 "+p.label+" \u2014 "+dateStr+" "+selectedSlot;
-  const body=
-"Bonjour,\n\n"+
-"Je souhaite r\u00e9server une s\u00e9ance de cadrage AQN.\n\n"+
-"\u2022 Parcours : "+p.label+" \u2014 "+p.price+"\n"+
-"\u2022 Cr\u00e9neau souhait\u00e9 : "+dateStr+" \u00e0 "+selectedSlot+"\n"+
-"\u2022 Format : 60 min en visioconf\u00e9rence\n"+
-"\u2022 Nom : "+nom+"\n"+
-"\u2022 E-mail : "+mail+"\n"+
-"\u2022 T\u00e9l\u00e9phone : "+(tel||"\u2014")+"\n\n"+
-"Ce qui m'am\u00e8ne :\n"+(msg||"\u2014")+"\n\n"+
-"Je r\u00e8gle par virement d\u00e8s r\u00e9ception de votre confirmation. Merci.";
-  window.location.href="mailto:"+AQN.email+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
-  const url=URL.createObjectURL(buildICS());
-  const link=document.getElementById('icsLink');
-  link.href=url;
-  link.download="RDV-AQN-"+selectedDate.getFullYear()+pad(selectedDate.getMonth()+1)+pad(selectedDate.getDate())+".ics";
-  ack.classList.add('show');
-  ack.scrollIntoView({behavior:'smooth',block:'nearest'});
-});
-prevM.addEventListener('click',function(){ viewMonth=new Date(viewMonth.getFullYear(),viewMonth.getMonth()-1,1); renderCalendar(); });
-nextM.addEventListener('click',function(){ viewMonth=new Date(viewMonth.getFullYear(),viewMonth.getMonth()+1,1); renderCalendar(); });
-renderCalendar();
+})();
 </script>
 </body>
 </html>
