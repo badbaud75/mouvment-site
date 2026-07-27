@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/coaching.html",
+      "destination": "https://aqnr.fr",
+      "permanent": true
+    },
+    {
+      "source": "/coaching",
+      "destination": "https://aqnr.fr",
+      "permanent": true
+    }
+  ]
+}
