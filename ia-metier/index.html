@@ -399,6 +399,19 @@
   </footer>
 
   <script>
+    /* avant-ia:params */
+    (function(){
+      var q = new URLSearchParams(location.search), f = document.getElementById('contact-form');
+      if (!f) return;
+      var clean = function(v){ return (v || '').replace(/[^a-z0-9-]/gi, '').slice(0, 20); };
+      var src = clean(q.get('src')), via = clean(q.get('via'));
+      if (src) f.elements.source.value = 'ia-metier · ' + src + (via ? ' · ' + via : '');
+      ['profil', 'conf'].forEach(function(k){
+        var v = clean(q.get(k)); if (!v) return;
+        var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = v; f.appendChild(i);
+      });
+    })();
+
     // Maquette V1 : à remplacer par le mécanisme du formulaire existant de mouvment.fr lors de l’intégration.
     document.getElementById('contact-form').addEventListener('submit', function(e){
       e.preventDefault();
@@ -408,7 +421,7 @@
         'Nom : ' + (fd.get('name') || '') + '\n' +
         'Email : ' + (fd.get('email') || '') + '\n\n' +
         'Besoin :\n' + (fd.get('need') || '') + '\n\n' +
-        'Source : ia-metier'
+        'Source : ' + (fd.get('source') || 'ia-metier') + (fd.get('profil') ? '\nLecture AVANT L’IA : ' + fd.get('profil') + (fd.get('conf') === '1' ? ' · confidentialité structurante' : '') : '')
       );
       window.location.href = 'mailto:contact@mouvment.fr?subject=' + subject + '&body=' + body;
     });
